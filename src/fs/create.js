@@ -1,19 +1,18 @@
 import { writeFile } from 'node:fs';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const filesDir = path.join(__dirname, '/files');
+import { getDirname } from '../utils/get-dirname.js';
+import { CreateModuleConstant, ErrorMessage } from './constants.js';
+import { join } from 'path';
 
 export const create = async () => {
+  const __dirname = getDirname(import.meta.url);
+  const filesDir = join(__dirname, CreateModuleConstant.dirName);
+
   writeFile(
-    `${filesDir}/fresh.txt`,
-    'I am fresh and young',
+    `${filesDir}/${CreateModuleConstant.fileName}`,
+    CreateModuleConstant.fileContent,
     { flag: 'wx' },
     (err) => {
-      if (err) throw new Error('FS operation failed');
+      if (err) throw new Error(ErrorMessage.fs);
     },
   );
 };
