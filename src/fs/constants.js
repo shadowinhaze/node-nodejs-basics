@@ -23,3 +23,7 @@ export const DeleteModuleConstant = {
   dirName: 'files',
   fileName: 'fileToRemove.txt',
 };
+
+export const ListModuleConstant = {
+  dirName: 'files',
+};
