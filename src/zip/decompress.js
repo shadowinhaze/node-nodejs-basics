@@ -1,30 +1,8 @@
-import { join } from 'path';
-import { createReadStream, createWriteStream } from 'fs';
-import { createUnzip } from 'zlib';
-import { getDirname } from '../utils/get-dirname.js';
-import { CompressModuleConstant } from './constants.js';
+import { zipper } from './zipper.js';
+import { ZipModuleMode } from './constants.js';
 
 export const decompress = async () => {
-  const gzip = createUnzip();
-
-  const __dirname = getDirname(import.meta.url);
-
-  const filePath = join(
-    __dirname,
-    CompressModuleConstant.dirName,
-    CompressModuleConstant.compressedFileName,
-  );
-
-  const decompressedFileName = join(
-    __dirname,
-    CompressModuleConstant.dirName,
-    CompressModuleConstant.fileName,
-  );
-
-  const readStream = createReadStream(filePath);
-  const writeStream = createWriteStream(decompressedFileName);
-
-  readStream.pipe(gzip).pipe(writeStream);
+  zipper(ZipModuleMode.decompress, import.meta.url);
 };
 
 decompress();

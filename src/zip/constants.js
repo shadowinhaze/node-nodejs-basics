@@ -1,5 +1,10 @@
-export const CompressModuleConstant = {
+export const ZipModuleConstant = {
   dirName: 'files',
-  fileName: 'fileToCompress.txt',
+  rawFileName: 'fileToCompress.txt',
   compressedFileName: 'archive.gz',
+};
+
+export const ZipModuleMode = {
+  compress: 'compress',
+  decompress: 'decompress',
 };
