@@ -12,3 +12,9 @@ export const CopyModuleConstant = {
   srcDirName: 'files',
   copyDirName: 'files_copy',
 };
+
+export const RenameModuleConstant = {
+  dirName: 'files',
+  oldFileName: 'wrongFilename.txt',
+  newFileName: 'properFilename.md',
+};
