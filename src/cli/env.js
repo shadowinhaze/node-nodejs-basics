@@ -3,15 +3,17 @@ import { ParseEnvModuleConstants } from './constants.js';
 export const parseEnv = () => {
   const envData = process.env;
 
-  const envInfo = Object.entries(envData).reduce((resultStr, [key, value]) => {
-    if (key.includes(ParseEnvModuleConstants.envPrefix)) {
-      return `${resultStr} ${key} = ${value};`;
-    }
+  const envInfo = Object.entries(envData)
+    .reduce((resultStr, [key, value]) => {
+      if (key.includes(ParseEnvModuleConstants.envPrefix)) {
+        return `${resultStr} ${key} = ${value};`;
+      }
 
-    return resultStr;
-  }, '');
+      return resultStr;
+    }, '')
+    .trim();
 
-  console.log(envInfo.trim());
+  console.log(envInfo);
 };
 
 parseEnv();
