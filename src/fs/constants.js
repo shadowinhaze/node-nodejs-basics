@@ -7,3 +7,8 @@ export const CreateModuleConstant = {
   fileName: 'fresh.txt',
   fileContent: 'I am fresh and young',
 };
+
+export const CopyModuleConstant = {
+  srcDirName: 'files',
+  copyDirName: 'files_copy',
+};
