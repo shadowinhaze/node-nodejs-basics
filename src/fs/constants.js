@@ -18,3 +18,8 @@ export const RenameModuleConstant = {
   oldFileName: 'wrongFilename.txt',
   newFileName: 'properFilename.md',
 };
+
+export const DeleteModuleConstant = {
+  dirName: 'files',
+  fileName: 'fileToRemove.txt',
+};
