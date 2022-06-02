@@ -27,3 +27,8 @@ export const DeleteModuleConstant = {
 export const ListModuleConstant = {
   dirName: 'files',
 };
+
+export const ReadModuleConstant = {
+  dirName: 'files',
+  fileName: 'fileToRead.txt',
+};
