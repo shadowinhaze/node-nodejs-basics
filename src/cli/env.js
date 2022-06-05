@@ -6,7 +6,7 @@ export const parseEnv = () => {
   const envInfo = Object.entries(envData)
     .reduce((resultStr, [key, value]) => {
       if (key.includes(ParseEnvModuleConstants.envPrefix)) {
-        return `${resultStr} ${key} = ${value};`;
+        return `${resultStr} ${key}=${value.trim()};`;
       }
 
       return resultStr;
